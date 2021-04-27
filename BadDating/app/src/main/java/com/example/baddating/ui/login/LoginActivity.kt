@@ -1,6 +1,7 @@
 package com.example.baddating.ui.login
 
 import android.app.Activity
+import android.content.Intent
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
@@ -16,6 +17,7 @@ import android.widget.ProgressBar
 import android.widget.Toast
 
 import com.example.baddating.R
+import com.example.baddating.SwipeActivity
 
 class LoginActivity : AppCompatActivity() {
 
@@ -61,7 +63,9 @@ class LoginActivity : AppCompatActivity() {
             setResult(Activity.RESULT_OK)
 
             //Complete and destroy login activity once successful
-            finish()
+//            finish()
+            var intent = Intent(this, SwipeActivity::class.java)
+            startActivity(intent)
         })
 
         username.afterTextChanged {
